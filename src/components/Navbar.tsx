@@ -4,9 +4,10 @@ import { Icons } from "./Icons"
 import NavItems from "./NavItems"
 import { buttonVariants } from "./ui/button"
 import Cart from "./Cart"
+import UserAccountNav from "./UserAccountNav"
 
 const Navbar = () => {
-  const user = null;
+  const user = true;
 
   return (
     <div className="bg-white sticky z-50 top-0 inset-x-0 h-16">
@@ -47,7 +48,8 @@ const Navbar = () => {
                   }
 
                   {
-                    user ? null :
+                    user ?
+                      <UserAccountNav /> :
                       <Link
                         href='/sign-up'
                         className={buttonVariants({ variant: 'ghost' })}
